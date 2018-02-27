@@ -23,17 +23,19 @@
             {{a}} + {{b}} = {{a + b}}
         </p>
       </div>
-      <ul>
+      <!-- <ul> -->
           <!-- Le v-for permet de boucler sur un tableau de notre component,
           il a besoin d'une propriété :key pour lui indiquer sur quoi se baser
           comme id unique, ici notre tableau n'est qu'un tableau de string, on
           utilise donc l'index du tableau comme key. Si l'on avait eu
           un for sur un tableau de person on aurait pu donner person.id comme :key -->
-          <li v-for="(item,index) of tab" :key="index" 
+          <!-- <li v-for="(item,index) of tab" :key="index" 
                 @click="showItem(item)" @dblclick="remove(index)">
               {{index}} {{item}}
           </li>
-      </ul>
+      </ul> -->
+      <List :tab="tab" v-on:action1="item => showItem(item)"
+                        @action2="index => remove(index)"></List>
         <!-- :attribut="valeur" est un raccourci pour v-bind:attribut="valeur"
          où attribut est à remplacer par un attribut html de l'élément sur
         lequel on l'applique le contenu de la variable valeur comme valeur.
@@ -44,8 +46,13 @@
 </template>
 
 <script>
+import List from './List.vue';
+
 export default {
     name:'first',
+    components: {
+        List
+    },
     /**
      * La propriété data du component est une fonction qui return un objet
      * contenant la liste des variables que l'on souhaite rendre accessible
