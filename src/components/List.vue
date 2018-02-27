@@ -11,7 +11,10 @@
 export default {
     name:'list',
     /** 
-     * La propriété props 
+     * La propriété props permet de spécifier des arguments qu'on pourra
+     * passer au component lors de son utilisation dans le template parent.
+     * Ici, on dit que notre component aura un attribut tab, qui attend un
+     * Array et qui est requis pour que le component fonctionne.
     */
     props: {
         tab: {
@@ -21,6 +24,12 @@ export default {
     },
     methods: {
         action1(item) {
+            /**
+             * On utilise la méthode $emit pour dire à notre component
+             * d'émettre un event vers son parent. Le nom de l'event est
+             * le premier argument, les arguments suivant sont les paramètres
+             * passés par l'event
+             */
             this.$emit('action1', item);
         },
         action2(index) {

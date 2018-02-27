@@ -34,6 +34,13 @@
               {{index}} {{item}}
           </li>
       </ul> -->
+      
+      <!-- On utilise notre component List en lui passant comme valeur
+      de tab le tab qui se trouve dans les data du component Vue.
+      On lui dit ensuite que lorsque l'event action1 est declenché, on
+      utilise le paramètre de cet event pour faire un showItem et que
+      lorsque l'action2 est declenché, on utilise le paramètre pour faire
+      un remove -->
       <List :tab="tab" v-on:action1="item => showItem(item)"
                         @action2="index => remove(index)"></List>
         <!-- :attribut="valeur" est un raccourci pour v-bind:attribut="valeur"
