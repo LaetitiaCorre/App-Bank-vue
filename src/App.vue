@@ -5,6 +5,7 @@
   <main id="app">
     <!-- On peut mettre une balise représentant un autre component si
     on l'a au préalable ajouter dans la liste des components du controller -->
+    <DogManager></DogManager>
     <First></First>
   </main>
 </template>
@@ -16,22 +17,27 @@
  * mettre peu ou pas de html ou de logique, juste l'appels aux autres
  * components.
  */
-import First from './components/First.vue';
+import First from "./components/First.vue";
+import DogManager from "./components/DogManager.vue";
 /**
  * Ici, on crée le component app et on lui dit qu'il contient comme sous
  * component le component First
  */
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    First
+    First,
+    DogManager
   }
-}
+};
 </script>
 
-<style>
+<style lang="scss">
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
