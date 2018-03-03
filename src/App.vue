@@ -3,10 +3,11 @@
   components Vue se scindent en 3 partie (template,controller,style)
   On met ici le HTML du component dans lequel on se trouve -->
   <main id="app">
+    <OperationManager></OperationManager>
     <!-- On peut mettre une balise représentant un autre component si
     on l'a au préalable ajouter dans la liste des components du controller -->
-    <DogManager></DogManager>
-    <First></First>
+    <!-- <DogManager></DogManager>
+    <First></First> -->
   </main>
 </template>
 
@@ -17,8 +18,9 @@
  * mettre peu ou pas de html ou de logique, juste l'appels aux autres
  * components.
  */
-import First from "./components/First.vue";
-import DogManager from "./components/DogManager.vue";
+ import OperationManager from "./components/OperationManager.vue";
+// import First from "./components/First.vue";
+// import DogManager from "./components/DogManager.vue";
 /**
  * Ici, on crée le component app et on lui dit qu'il contient comme sous
  * component le component First
@@ -26,8 +28,9 @@ import DogManager from "./components/DogManager.vue";
 export default {
   name: "app",
   components: {
-    First,
-    DogManager
+    OperationManager
+    // First,
+    // DogManager
   }
 };
 </script>
